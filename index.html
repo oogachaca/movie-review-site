@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fat, Sick & Nearly Dead - Review</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      background-color: #E9F6E6;
+      margin: 0;
+      padding: 0;
+      color: #4F4F4F;
+    }
+    header {
+      background: url('https://img.youtube.com/vi/Gv3vEXy_EwU/maxresdefault.jpg') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.5rem;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+    .poster {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 2rem;
+    }
+    .poster img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .poster img:hover {
+      transform: scale(1.05);
+    }
+    .review {
+      flex: 2;
+      min-width: 300px;
+    }
+    .trailer-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #6DBE45;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .trailer-button:hover {
+      background-color: #5aa838;
+    }
+    .spoilers-toggle {
+      cursor: pointer;
+      color: #6DBE45;
+      text-decoration: underline;
+    }
+    .rating-slider {
+      margin-top: 2rem;
+    }
+    .comment-box {
+      margin-top: 2rem;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    button.submit-comment {
+      margin-top: 0.5rem;
+      background-color: #6DBE45;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.submit-comment:hover {
+      background-color: #5aa838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fat, Sick & Nearly Dead – Movie Review</h1>
+  </header>
+  <div class="container">
+    <div class="poster" data-aos="fade-right">
+      <img src="https://m.media-amazon.com/images/M/MV5BMTQyNDY1NDU0NV5BMl5BanBnXkFtZTcwMjY2ODM2NA@@._V1_FMjpg_UX1000_.jpg" alt="Movie Poster" />
+    </div>
+    <div class="review" data-aos="fade-left">
+      <section class="summary">
+        <h2>Summary</h2>
+        <p><strong>Fat, Sick & Nearly Dead</strong> (2010) follows Australian Joe Cross on a transformative 60-day juice fast across the U.S., aiming to shed weight and cure his chronic illness. Along the way, he meets people suffering similar health issues and introduces them to the juicing lifestyle. The documentary captures both the physical journey and emotional revelations as Joe attempts to regain control of his life and inspire others to do the same.</p>
+      </section>
+
+      <section class="verdict">
+        <h2>Review Verdict</h2>
+        <p>The documentary is visually engaging and emotionally impactful, offering a compelling narrative of self-transformation. However, it lacks scientific backing, with minimal consultation from healthcare professionals. While inspirational, it oversimplifies complex health issues, leaving questions about the practicality and safety of prolonged juicing unanswered.</p>
+      </section>
+
+      <section class="analysis">
+        <h2>In-Depth Analysis</h2>
+        <p>The film focuses heavily on emotional appeal, emphasizing before-and-after transformations. It highlights the obesity epidemic and offers juicing as a cure-all, but without addressing the long-term sustainability or possible health risks. Themes of personal responsibility and the American food crisis are central, yet they’re treated with a somewhat idealistic lens. The cinematography supports the uplifting tone, but the lack of expert insight creates an unbalanced perspective.</p>
+      </section>
+
+      <section class="spoilers">
+        <h2 class="spoilers-toggle" onclick="toggleSpoilers()">Spoiler Section (Click to Reveal)</h2>
+        <div id="spoiler-content" style="display: none;">
+          <p>The turning point arrives when Joe meets Phil Staples, a 429-pound truck driver suffering from the same autoimmune disease. Phil’s story becomes a film within the film, illustrating an even more dramatic transformation. His journey from despair to empowerment adds a powerful secondary arc, but like Joe’s, it is presented without long-term data, leaving viewers to wonder how both men fared years later.</p>
+        </div>
+      </section>
+
+      <section class="rating">
+        <h2>Final Rating</h2>
+        <p>🥕🥬🥕🥬🥕🥬☆☆☆☆ (6/10 Juicing Stars)</p>
+      </section>
+
+      <div class="rating-slider">
+        <label for="userRating">Your Rating:</label>
+        <input type="range" id="userRating" name="userRating" min="0" max="10" step="1" oninput="document.getElementById('ratingValue').innerText = this.value">
+        <span id="ratingValue">5</span>/10
+      </div>
+
+      <div class="comment-box">
+        <h3>Leave a Comment</h3>
+        <textarea placeholder="What did you think?"></textarea>
+        <br>
+        <button class="submit-comment">Submit</button>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=Gv3vEXy_EwU" target="_blank" class="trailer-button">▶ Watch Trailer</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleSpoilers() {
+      const content = document.getElementById('spoiler-content');
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
